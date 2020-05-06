@@ -1,0 +1,184 @@
+From Amit to Everyone:  12:11 PM
+Dml Operations
+
+insert
+update
+delete
+
+i) how to make any record from apex anonymous window
+ii) Howmuch datatypes in apex
+iii)
+
+Datatypes :  
+premitive datatypes - long , date , time , datetime , integer , string  floating -double , decimal , boolean ,ID ,Blob
+curreny =  12.23 rps
+double do = 12.2d;
+ ID = 18 character =  15 char + 3 char remove from last     0016F00003dA4zLQAS 
+
+Boolean v;        = null/0/ false 
+sObject datatype 
+
+a record of any object 
+Generic datatypes 
+
+integer
+string
+double
+sObject like Account,contact etc all Standered Object and custom object 
+sObject  contains all like name email , phone all info of any standered object
+
+Account acc = new Account();
+acc.Name= 'Amit'; 
+insert acc;
+
+contact c = new contact( LastName='contact');
+c.Lastname =;
+Account 
+
+generally while programming  we use specific sobject type when we are sure of the instance of the sobject but whenever 
+there comes a situation when we 
+can get instance of any sObject type , we use generic sObject.
+
+Students__c s = new St
+From Amit to Everyone:  12:12 PM
+Camal CaseCadding
+
+COLLECTION  : List , Set , Map
+
+List :  ordered collection
+
+like an array
+it contains duplicate record also.
+it have index functionality in it
+like when we add something in list then it use index to store elements
+
+
+syntex :
+
+List<Datatype> listName = New List<Datatype>();
+or 
+string[] nameList= new String();
+or 
+string[] n = new list<string> ();
+or 
+list<string> s = new string[];
+
+method od list :
+addAll() -  full set 
+add()
+size() - getting the size of list = lastindex+1 - return element number in the list 
+get(index)
+remove(index)
+clone()
+set()
+sort()- ascending order  use with only premitive datatypes 
+isEmpty() - gives boolean true / false 
+clear() - clear all list
+
+list<list<string>> l = new list<list<string>>(); - 2D list 
+{
+    '{'a','{'b','d'}','c'}',
+    '{'g','r','b'}'
+}
+list<string> l1 = 'g', 'r', 'b'  list<string> l2 ='a', 'b','c'
+l.add(l1);
+l.add(l2);
+ l - 2D list
+list<list<list<string>>> l1 = new list<list<list<string>>>() ; -   3D list
+
+ example : 
+
+List<String> accList = Ne
+From Amit to Everyone:  12:13 PM
+
+list<list<string>> l = new list<list<string>>(); - 2D list 
+{
+    '{'a','{'b','d'}','c'}',
+    '{'g','r','b'}'
+}
+list<string> l1 = 'g', 'r', 'b'  list<string> l2 ='a', 'b','c'
+l.add(l1);
+l.add(l2);
+ l - 2D list
+list<list<list<string>>> l1 = new list<list<list<string>>>() ; -   3D list
+
+ example : 
+
+List<String> accList = New List<String>();
+
+accList.add('test');// this is the first index
+accList.add('test123'); //this is the 2nd index
+accList.remove(0);
+accList.set(1, '23');
+accList.clear(); -- null / 
+acclist - test123
+list<String> s = accList.clone();
+
+
+system.debug('list ' +accList[0]+' second index '+accList[1]);
+
+Set :
+unordered collection
+like an storage
+it contains unique values
+it have not index functionality
+when we store anthing in set then it add element like an storage like store room
+
+
+twist - however,  there is a twist with sobject 
+		'uniqueness of the data respects case sensivity.'
+
+Account a = new Account(Name='amit', phone='098765432');
+Account a1 = new Account(Name='Amit', phone='098765432
+From Smriti Sharan to Everyone:  12:16 PM
+sfdcAmplified@gmail.com
+From Me to Everyone:  12:16 PM
+Gyan: gyaneshwarsfdc@gmail.com
+From Amit to Everyone:  12:21 PM
+syntex :  
+set<Datatype> setName = new Set<Datatype>();
+
+
+
+set<integer> s = new set<integer>();
+s.add(9);
+s.add(8);
+s.add(7);
+s.remove(7);
+s- 9,8
+
+
+List<integer> accList = New List<integer>();
+accList.addAll(s);
+system.debug(accList[0]);
+
+
+List<integer> l = New List<integer>();
+l.add(1);
+l.add(2);
+set<integer> s = new set<integer>();
+s.addAll(l);
+system.debug('s '+ s);
+
+method of set :
+
+addAll()
+add()
+remove(element)
+removeAll()
+clear()
+clone()
+contains(element) - boolean t/f
+containsAll(list)
+size()
+retainAll(list)
+
+list - 1000,2000 ,3000 
+set - 1000,2000, 3000, 4000
+retainAll - 1000, 2000,3000
+
+
+
+
+sfdc99
+
